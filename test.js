@@ -250,7 +250,34 @@ function listedescandidats(candidats) {
 }
 listedescandidats(candidats)
 
-
+function Voterpouruncandidat(){
+let n=prompt("entre ton CIN :")
+let lka=false
+for(let i=0;i<candidats.length;i++){
+    for (let b=0;b<candidats.length;b++)
+    if(candidats[i].electeurs[b]==n){
+        lka=true;
+    }
+    }
+    if(lka===false){
+        let w =prompt("entre le nom ou cin de candidats que tu vote a vous :");
+        let jda;
+        for(let j=0;j<candidats.length;j++){
+            if(candidats[j].cin===w ||candidats[j].nom===w){
+                candidats[j].electeurs.push(n);
+            }
+            else{
+              jda="hada ma3ndnach "
+            }
+        }
+        console.log(jda)
+    }
+    else{
+        console.log("Vous avez déjà voté et vous navez pas le droit de modifier votre vote ni de voter à nouveau");  
+    }
+console.log(candidats)
+}
+Voterpouruncandidat()
 
 
 
