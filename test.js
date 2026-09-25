@@ -1,4 +1,5 @@
-const candidats = [
+const prompt = require('prompt-sync')();
+let candidats = [
 	{
 		cin: "AB123456",
 		nom: "Boushaba",
@@ -56,3 +57,64 @@ const candidats = [
 		electeurs: []
 	}
 ];
+
+function nouveaucandidat(){
+	let obj={}
+	let kain=false
+
+     let cin = prompt("entres le cin :");
+	 let nom = prompt("entres le nom :");
+	 let prenom = prompt("entres le prenom :");
+	 let partiPolitique =prompt("entres le artiPolitique :");
+	 let age =+prompt("entres le age :")
+	 for(let i=0 ;i<candidats.length ;i++){ 
+		if(candidats[i].cin===cin){
+			kain=true
+		}
+	}
+	if(kain===false){ 	
+	 obj.cin=cin;
+	 obj.nom=nom;
+	 obj.prenom=prenom;
+	 obj.partiPolitique=partiPolitique;
+	 obj.age=age;
+	 obj.electeurs=[]
+candidats.push(obj);
+console.log(candidats)
+}
+else {
+console.log("maimknch dkhl jouj mrat.");
+
+}
+	 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//const p=false
+//while(!false){
+//	console.log("1. Ajouter un nouveau candidat :","2. Ajouter plusieurs candidats à la fois.");
+//	let n=+prompt("entres un number")
+//	switch(n){
+//		case 1:
+
+
+
+//	}
+
+//} 
+
