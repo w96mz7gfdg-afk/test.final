@@ -87,8 +87,16 @@ console.log("maimknch dkhl jouj mrat.");
 
 }
 	 }
+	 nouveaucandidat();
+	 
+ function Ajouterplusieurs(){
+	let number =prompt("entres les number des condidat :")
+	for(let i=0 ;i<number;i++){
+	nouveaucandidat();
 
-
+	}
+ }
+Ajouterplusieurs()
 
 
 
