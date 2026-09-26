@@ -183,7 +183,7 @@ function nouveaucandidat() {
 		obj.age = age;
 		obj.electeurs = []
 		candidats.push(obj);
-		console.log(candidats)
+		console.log("done")
 	}
 	else {
 		console.log("maimknch dkhl jouj mrat.");
@@ -280,7 +280,7 @@ for(let i=0;i<candidats.length;i++){
 			console.log("Vous avez déjà voté et vous navez pas le droit de modifier votre vote ni de voter à nouveau");  
 		}
 		
-	}
+}
 
 
 function  lesinformationsduncandidat(){
@@ -418,31 +418,48 @@ function Statistiquesdelélection(){
 	}   
 }
 
+let p=true
+while(p){
+	console.log("1. Ajouter un nouveau candidat .");
+	console.log("2. Ajouter plusieurs candidats à la fois.");
+	console.log("3. Afficher la liste des candidats");
+	console.log("4. Voter pour un candidat ");
+	console.log("5. Modifier les informations d'un candidat");
+	console.log("6. Supprimer un candidat");
+	console.log("7. Rechercher des candidats");
+	console.log("8. Statistiques de l'élection");
+	console.log("9.bach tkhrj ");
 	
-	
-
-
-
-
-
-
-//const p=false
-//while(!false){
-	//	console.log("1. Ajouter un nouveau candidat :","2. Ajouter plusieurs candidats à la fois.");
-	//	let n=+prompt("entres un number")
-	//	switch(n){
-		//		case 1:
-		
-		
-		
-		//	}
-		
-		//}
-		//Statistiquesdelélection()
-		//Rechercherdescandidats()
-        //Supprimeruncandidat();
-		//nouveaucandidat();
-		//Ajouterplusieurs()
-		// listedescandidats(candidats)
-		//Voterpouruncandidat()
-		//lesinformationsduncandidat()
+		let n=+prompt("entres un number :")
+		switch(n){
+				case 1 :
+		nouveaucandidat();
+		break;
+		        case 2 :
+        Ajouterplusieurs();
+		break;
+		        case 3 :
+		listedescandidats(candidats);
+		break;
+				case 4 :
+        Voterpouruncandidat();
+		break;
+		        case 5 :
+		lesinformationsduncandidat();
+		break;
+		        case 6 :
+        Supprimeruncandidat();
+		break;
+		        case 7 :
+        Rechercherdescandidats();
+		break;
+		        case 8 :
+		Statistiquesdelélection();
+		break;
+		       case 9 :
+		p=false
+		break;	
+		      default :
+			  console.log("Entres un numero entre 1 et 9");	
+	}
+		}
