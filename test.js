@@ -275,9 +275,24 @@ for(let i=0;i<candidats.length;i++){
     else{
         console.log("Vous avez déjà voté et vous navez pas le droit de modifier votre vote ni de voter à nouveau");  
     }
-console.log(candidats)
 }
 Voterpouruncandidat()
+
+function  lesinformationsduncandidat(){
+let n=prompt("3tini condida li biti tbdl fih :");
+let a=prompt("3tini ach bit tbdl fih flprati plitique :");
+let b=prompt("3tini ach biti tbdl flparti age :");
+for(let i=0 ;i<candidats.length;i++){
+    if(candidats[i].name===n){
+
+
+    }
+    else{
+        let s ="il na pas un candidat bhad smya"
+    }
+}
+console.log 
+}
 
 
 
