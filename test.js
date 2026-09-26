@@ -190,7 +190,7 @@ function nouveaucandidat() {
 
 	}
 }
-nouveaucandidat();
+
 
 function Ajouterplusieurs() {
 	let number = prompt("entres les number des condidat :")
@@ -199,7 +199,7 @@ function Ajouterplusieurs() {
 
 	}
 }
-Ajouterplusieurs()
+
 
 function listedescandidats(candidats) {
 	console.log("1-Trier les candidats par nombre de votes");
@@ -248,7 +248,7 @@ function listedescandidats(candidats) {
 	}
 
 }
-listedescandidats(candidats)
+
 
 function Voterpouruncandidat(){
 let n=prompt("entre ton CIN :")
@@ -276,24 +276,50 @@ for(let i=0;i<candidats.length;i++){
         console.log("Vous avez déjà voté et vous navez pas le droit de modifier votre vote ni de voter à nouveau");  
     }
 }
-Voterpouruncandidat()
+
 
 function  lesinformationsduncandidat(){
-let n=prompt("3tini condida li biti tbdl fih :");
-let a=prompt("3tini ach bit tbdl fih flprati plitique :");
-let b=prompt("3tini ach biti tbdl flparti age :");
+let n=prompt("3tini cin ta3 condidat li biti tbdl fih :");
+  let s;
 for(let i=0 ;i<candidats.length;i++){
-    if(candidats[i].name===n){
-
-
+	if(candidats[i].cin===n){
+		console.log("1-tbdil lpdal lparti politique")		
+		console.log("2-tbdl flparti age")
+		let j=prompt("khtar ach bit tbdl :")
+		let a ;
+		let b ;
+		let l ;
+		if(j==1){  
+		a=prompt("3tini ach bit tbdl fih flprati plitique :");
+			candidats[i].partiPolitique=a ;
+			}
+		else if(j==2) {
+			 b=+prompt("3tini ach biti tbdl flparti age :");
+		        candidats[i].age=b	
+		}
+		else {
+			 l="hada makainch ahbibi"
+			 console.log(l)
+	
+		}
+		break;
     }
     else{
-        let s ="il na pas un candidat bhad smya"
-    }
-}
-console.log 
+         s ="il na pas un candidat bhad smya"
+		}
+	}
+	console.log(s);
+console.log(candidats)
 }
 
+function Supprimeruncandidat(){
+	let a =prompt("entres cin de candidat:")
+	for(let i=0;i<candidats.length;i++){
+		if(candidats[i].cin===a){
+			
+		}
+	}
+}
 
 
 
@@ -308,14 +334,19 @@ console.log
 
 //const p=false
 //while(!false){
-//	console.log("1. Ajouter un nouveau candidat :","2. Ajouter plusieurs candidats à la fois.");
-//	let n=+prompt("entres un number")
-//	switch(n){
-//		case 1:
+	//	console.log("1. Ajouter un nouveau candidat :","2. Ajouter plusieurs candidats à la fois.");
+	//	let n=+prompt("entres un number")
+	//	switch(n){
+		//		case 1:
+		
+		
+		
+		//	}
+		
+		//}
 
-
-
-//	}
-
-//} 
-
+		//nouveaucandidat();
+		//Ajouterplusieurs()
+		// listedescandidats(candidats)
+		//Voterpouruncandidat()
+		//lesinformationsduncandidat()
