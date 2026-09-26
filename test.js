@@ -255,7 +255,7 @@ let n=prompt("entre ton CIN :")
 let trouve = false
 for(let i=0;i<candidats.length;i++){
     for (let j=0;j< candidats[i].electeurs.length;j++){ 
-        if(candidats[i].electeurs[j]==n ){
+        if(candidats[i].electeurs[j]==n && candidats[i].electeurs[j]!= "Independant"){
             trouve=true;
 		    break;
     }
