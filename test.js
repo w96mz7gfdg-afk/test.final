@@ -314,12 +314,22 @@ console.log(candidats)
 
 function Supprimeruncandidat(){
 	let a =prompt("entres cin de candidat:")
+	let b=false
 	for(let i=0;i<candidats.length;i++){
 		if(candidats[i].cin===a){
-			
+			candidats.splice(i,1);
+			b=true;
+			break;
+		}
+		if (b==true){
+			console.log("ce condidat a ete surpprime.")
+		}
+		else{
+             console.log("je ne ai pas trouve ce condidat.");
 		}
 	}
 }
+
 
 
 
@@ -344,7 +354,7 @@ function Supprimeruncandidat(){
 		//	}
 		
 		//}
-
+        //Supprimeruncandidat();
 		//nouveaucandidat();
 		//Ajouterplusieurs()
 		// listedescandidats(candidats)
