@@ -252,31 +252,36 @@ function listedescandidats(candidats) {
 
 function Voterpouruncandidat(){
 let n=prompt("entre ton CIN :")
-let lka=false
+let trouve = false
 for(let i=0;i<candidats.length;i++){
-    for (let j=0;j<candidats.length;j++)
-    if(candidats[i].electeurs[j]==n){
-        lka=true;
+    for (let j=0;j< candidats[i].electeurs.length;j++){ 
+        if(candidats[i].electeurs[j]==n ){
+            trouve=true;
+		    break;
     }
     }
-    if(lka===false){
+}
+    if(trouve===false){
         let w =prompt("entre le nom ou cin de candidats que tu vote a vous :");
-        let jda;
+        let trouvecondidat = false
         for(let j=0;j<candidats.length;j++){
             if(candidats[j].cin===w ||candidats[j].nom===w){
                 candidats[j].electeurs.push(n);
+				trouvecondidat=true;
+				break;
             }
-            else{
-              jda="hada ma3ndnach "
+		}	
+            if (trouvecondidat===false){
+              console.log("hada ma3ndnach ");
+			  
             }
         }
-        console.log(jda)
-    }
-    else{
-        console.log("Vous avez déjà voté et vous navez pas le droit de modifier votre vote ni de voter à nouveau");  
-    }
-}
-Voterpouruncandidat()
+		else{
+			console.log("Vous avez déjà voté et vous navez pas le droit de modifier votre vote ni de voter à nouveau");  
+		}
+		
+	}
+
 
 function  lesinformationsduncandidat(){
 let n=prompt("3tini cin ta3 condidat li biti tbdl fih :");
