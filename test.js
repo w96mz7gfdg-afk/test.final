@@ -254,8 +254,8 @@ function Voterpouruncandidat(){
 let n=prompt("entre ton CIN :")
 let lka=false
 for(let i=0;i<candidats.length;i++){
-    for (let b=0;b<candidats.length;b++)
-    if(candidats[i].electeurs[b]==n){
+    for (let j=0;j<candidats.length;j++)
+    if(candidats[i].electeurs[j]==n){
         lka=true;
     }
     }
@@ -276,7 +276,7 @@ for(let i=0;i<candidats.length;i++){
         console.log("Vous avez déjà voté et vous navez pas le droit de modifier votre vote ni de voter à nouveau");  
     }
 }
-
+Voterpouruncandidat()
 
 function  lesinformationsduncandidat(){
 let n=prompt("3tini cin ta3 condidat li biti tbdl fih :");
@@ -350,10 +350,71 @@ function Rechercherdescandidats(){
 			}
 }
 
+function Statistiquesdelélection(){
+	console.log("1-Afficher le nombre total de candidats.");
+	console.log("2-Afficher le nombre total de votes exprimés dans toute l'élection.");
+	console.log("3-Afficher le Top 3 des candidats ayant le plus de votes.");
+	console.log("4-Afficher le nombre de candidats par parti politique.");
+	let n=+prompt("entres un numbres :");
+	if (n==1){   
+		let total=0
+		for(let i=0;i<candidats.length;i++){
+			total+=1
+		}
+		console.log("total :",total);
+	}
+	else if(n==2){
+		let total=0
+		for(let j=0;j<candidats.length;j++){
+			total +=candidats[j].electeurs.length
+		}
+		console.log("nombres de vote :",total);
+	}
+	else if(n==3){
+		let amr;
+		for (let i = 0; i < candidats.length-1; i++) {
+			for (let j = i + 1; j < candidats.length; j++) {
+				if (candidats[i].electeurs.length < candidats[j].electeurs.length) {
+					amr = candidats[i];
+					candidats[i] = candidats[j];
+					candidats[j] = amr
+				}	
+			}
+		}
+		for (let i = 0; i < 3; i++) {
+			console.log("cin :", candidats[i].cin);
+			console.log("nom :", candidats[i].nom);
+			console.log("prenom : ", candidats[i].prenom);
+			console.log("partiPolitique : ", candidats[i].partiPolitique);
+			console.log("age:", candidats[i].age);
+			console.log("electeurs: ", candidats[i].electeurs);
+			
+		}
+	}
+	else if(n==4){
+		let a=0;
+	    let b=0;
+	    let c=0;
+        for(let i=0;i<candidats.length;i++){
+			if(candidats[i].partiPolitique==="waw"){
+				a+=1
+			} 
+			else if (candidats[i].partiPolitique==="law"){
+				b+=1
+			}
+			else if (candidats[i].partiPolitique==="jaw"){
+				c+=1
+			}
+		}
+		console.log("waw :",a);
+		console.log("law :",b);
+		console.log("jaw :",c);
+		
+	}   
+}
 
-
-
-
+	
+	
 
 
 
@@ -372,6 +433,7 @@ function Rechercherdescandidats(){
 		//	}
 		
 		//}
+		//Statistiquesdelélection()
 		//Rechercherdescandidats()
         //Supprimeruncandidat();
 		//nouveaucandidat();
