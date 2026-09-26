@@ -330,7 +330,25 @@ function Supprimeruncandidat(){
 	}
 }
 
-
+function Rechercherdescandidats(){
+	let n=prompt("entre le nom du candidat que tu veux approcher :");
+	let b=false
+	for(let i=0;i<candidats.length;i++){
+		if(candidats[i].nom===n){
+			console.log("cin :",candidats[i].cin);
+			console.log("nom :",candidats[i].nom);
+			console.log("prenom :",candidats[i].prenom);
+			console.log("partiPolitique :",candidats[i].partiPolitique);
+			console.log("age :",candidats[i].age);
+			console.log("electurs :",candidats[i].electeurs.length);
+			b=true
+			break;
+		}
+	}
+		    if (b===false){
+				console.log("je ne ai pas trouve ce condidat.")
+			}
+}
 
 
 
@@ -354,6 +372,7 @@ function Supprimeruncandidat(){
 		//	}
 		
 		//}
+		//Rechercherdescandidats()
         //Supprimeruncandidat();
 		//nouveaucandidat();
 		//Ajouterplusieurs()
