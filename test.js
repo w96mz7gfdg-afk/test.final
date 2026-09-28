@@ -164,7 +164,6 @@ const candidats = [
 function nouveaucandidat() {
 	let obj = {}
 	let kain = false
-
 	let cin = prompt("entres le cin :");
 	let nom = prompt("entres le nom :");
 	let prenom = prompt("entres le prenom :");
@@ -186,7 +185,7 @@ function nouveaucandidat() {
 		console.log("done")
 	}
 	else {
-		console.log("maimknch dkhl jouj mrat.");
+		console.log("vous ne pouves pas voter deux fois.");
 
 	}
 }
@@ -223,15 +222,14 @@ function listedescandidats(candidats) {
 			console.log("partiPolitique : ", candidats[i].partiPolitique);
 			console.log("age:", candidats[i].age);
 			console.log("electeurs: ", candidats[i].electeurs.length);
+			console.log("                                           ");
 
 		}
-
-
 	}
 
 	else if (n == 2) {
-		console.log("kain waw ou kaina law ou jaw");
-		let partiPolitique = prompt("3tini smya ta3 lhizb li baghi :")
+		console.log("Il y a waw ,law et jaw");
+		let partiPolitique = prompt("donne-moi le nom du parti que tu veux :")
 		for (let i = 0; i < candidats.length; i++) {
 			if (candidats[i].partiPolitique === partiPolitique) {
 				console.log("cin :", candidats[i].cin);
@@ -240,6 +238,7 @@ function listedescandidats(candidats) {
 				console.log("partiPolitique : ", candidats[i].partiPolitique);
 				console.log("age:", candidats[i].age);
 				console.log("electeurs: ", candidats[i].electeurs);
+				console.log("                                           ");
 			}
 		}
 	}
@@ -265,7 +264,7 @@ function Voterpouruncandidat() {
 		let w = prompt("entre le nom ou cin de candidats que tu vote a vous :");
 		let trouvecondidat = false
 		for (let j = 0; j < candidats.length; j++) {
-			if (candidats[j].cin === w || (candidats[j].nom === w && candidats[j].partiPolitique != "Independant")) {
+			if (candidats[j].cin === w || (candidats[j].nom === w )) {
 				candidats[j].electeurs.push(n);
 				trouvecondidat = true;
 				console.log("Done");
@@ -273,7 +272,7 @@ function Voterpouruncandidat() {
 			}
 		}
 		if (trouvecondidat === false) {
-			console.log("hada ma3ndnach ");
+			console.log("Nous na avons pas ca candidats ");
 
 		}
 	}
@@ -284,37 +283,38 @@ function Voterpouruncandidat() {
 
 
 function lesinformationsduncandidat() {
-	let n = prompt("3tini cin ta3 condidat li biti tbdl fih :");
-	let s;
+	let n = prompt("Donne-moi le cin du condidat que tu veux modifier :");
+	let s=false;
 	for (let i = 0; i < candidats.length; i++) {
 		if (candidats[i].cin === n) {
-			console.log("1-tbdil lpdal lparti politique")
-			console.log("2-tbdl flparti age")
-			let j = prompt("khtar ach bit tbdl :")
+			s=true;
+			console.log("1-parti politique")
+			console.log("2-parti age")
+			let j = prompt("choisis que tu veux modifier :")
 			let a;
 			let b;
-			let l;
 			if (j == 1) {
-				a = prompt("3tini ach bit tbdl fih flprati plitique :");
+				a = prompt("donne  que tu veux modifier dans la prati plitique :");
 				candidats[i].partiPolitique = a;
+				console.log("done")
 			}
 			else if (j == 2) {
-				b = +prompt("3tini ach biti tbdl flparti age :");
+				b = +prompt("donne que tu veux modifier dans la parti age :");
 				candidats[i].age = b
+				console.log("done");
 			}
 			else {
-				l = "hada makainch ahbibi"
-				console.log(l)
-
+				console.log("Cela na existeb pas ");
+				
+				
 			}
 			break;
 		}
-		else {
-			s = "il na pas un candidat bhad smya"
-		}
 	}
-	console.log(s);
-	console.log(candidats)
+	if(s===false) {
+		console.log( "Aucun candidat ne pote ce nom .");
+		
+	}
 }
 
 function Supprimeruncandidat() {
@@ -327,7 +327,7 @@ function Supprimeruncandidat() {
 			break;
 		}
 	}
-		if (b == true) {
+		if (b === true) {
 			console.log("ce condidat a ete surpprime.")
 		}
 		else {
@@ -340,6 +340,7 @@ function Rechercherdescandidats() {
 	let b = false
 	for (let i = 0; i < candidats.length; i++) {
 		if (candidats[i].nom === n) {
+			console.log("                         ")
 			console.log("cin :", candidats[i].cin);
 			console.log("nom :", candidats[i].nom);
 			console.log("prenom :", candidats[i].prenom);
@@ -358,6 +359,7 @@ function Rechercherdescandidats() {
 function Statistiquesdelélection() {
 	let b=true
 	while(b){ 
+	console.log("                                  ");
 	console.log("1-Afficher le nombre total de candidats.");
 	console.log("2-Afficher le nombre total de votes exprimés dans toute l'élection.");
 	console.log("3-Afficher le Top 3 des candidats ayant le plus de votes.");
@@ -434,9 +436,21 @@ function Statistiquesdelélection() {
 	}
 	}
 }
+function afficherlescandidat(){
+	for (let i=0;i<candidats.length;i++){
+		console.log("cin :", candidats[i].cin);
+	    console.log("nom :", candidats[i].nom);
+		console.log("prenom : ", candidats[i].prenom);
+		console.log("partiPolitique : ", candidats[i].partiPolitique);
+		console.log("age:", candidats[i].age);
+		console.log("electeurs: ", candidats[i].electeurs.length);
+		console.log("                                           ");
+	}
+}
 
 let p = true
 while (p) {
+	console.log("                             ");
 	console.log("1. Ajouter un nouveau candidat .");
 	console.log("2. Ajouter plusieurs candidats à la fois.");
 	console.log("3. Afficher la liste des candidats");
@@ -445,7 +459,8 @@ while (p) {
 	console.log("6. Supprimer un candidat");
 	console.log("7. Rechercher des candidats");
 	console.log("8. Statistiques de l'élection");
-	console.log("9.pour sortir ");
+	console.log("9. afficher les condidat");
+	console.log("10.pour sortir ");
 
 	let n = +prompt("entres un number :")
 	switch (n) {
@@ -474,6 +489,9 @@ while (p) {
 			Statistiquesdelélection();
 			break;
 		case 9:
+				afficherlescandidat();
+				break;
+		case 10:	
 			p = false
 			break;
 		default:
